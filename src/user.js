@@ -6,7 +6,7 @@ module.exports = [
     },{
         name:"Mason",
         gender:"male",
-        age: 12
+        age: 9
     },{
         name:"Elizabeth",
         gender:"female",
@@ -30,11 +30,11 @@ module.exports = [
     },{
         name:"Audrey",
         gender:"female",
-        age: 12
+        age: 9
     },{
         name:"Anna",
         gender:"female",
-        age: 8
+        age: 9
     },{
         name:"Sophia",
         gender:"male",
@@ -42,15 +42,15 @@ module.exports = [
     },{
         name:"Jack",
         gender:"male",
-        age: 100
+        age: 44
     },{
         name:"Tom",
         gender:"male",
-        age: 64
+        age: 44
     },{
         name:"Lucas",
         gender:"male",
-        age: 73
+        age: 44
     },{
         name:"Alex",
         gender:"male",
@@ -62,10 +62,10 @@ module.exports = [
     },{
         name:"Bella",
         gender:"female",
-        age: 68
+        age: 29
     },{
         name:"Sarah",
         gender:"female",
-        age: 49
+        age: 29
     },
 ]
