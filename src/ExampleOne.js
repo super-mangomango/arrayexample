@@ -21,7 +21,7 @@ function UserList ({ name, gender, age }) {
 //add.js를 합쳐서, gender 기준으로 2단 option (concat)
 //회원들의 나이평균
 
-function NewList () {
+function ExampleOne () {
 
  const [filteredNewUserInfo, setfilteredNewUserInfo] = useState([])
 
@@ -132,4 +132,4 @@ function NewList () {
     )
 }
 
-export default NewList
+export default ExampleOne
