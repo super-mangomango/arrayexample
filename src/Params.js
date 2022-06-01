@@ -5,11 +5,7 @@ import userInfo from "./user";
 const Params = () => {
 
     return <ul className="list-example">
-        {userInfo.map ((user, i) => {
-            return (
-                <Greeting key={user.i} name={user.name} age={user.age}/>
-            )
-        })}
+                <Greeting {...userInfo}/>
     </ul>
 }
 
