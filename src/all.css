@@ -151,11 +151,11 @@ b {
     box-shadow: 0px 0px 6px #c9c9c9;
 }
 
-.example-text-wrapper {
+.list-example {
     position: absolute;
     top:50%;
     left: 50%;
-    transform: translate(-50%, -75%);
+    transform: translate(-50%, -60%);
     text-align: center;
     font-family: "Noto Sans Kr", sans-serif;
     font-size: 28px;

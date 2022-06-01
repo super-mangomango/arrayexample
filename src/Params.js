@@ -1,13 +1,16 @@
 import React from "react";
 import Greeting from "./Greeting";
+import userInfo from "./user";
 
 const Params = () => {
-    const data = {
-        name: '박재용',
-        date: '2022년 5월 25일'
-    }
 
-    return <Greeting {...data} />
+    return <ul className="list-example">
+        {userInfo.map ((user, i) => {
+            return (
+                <Greeting key={user.i} name={user.name} age={user.age}/>
+            )
+        })}
+    </ul>
 }
 
 
