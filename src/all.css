@@ -164,4 +164,77 @@ b {
 }
 
 
+.hooks-wrapper {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+}
+
+.hooks {
+    border: 1px solid #333333;
+    border-radius: 30px;
+    padding: 30px;
+}
+
+.hooks-title {
+    text-align: center;
+    font-family: "Noto Sans Kr", sans-serif;
+    font-size: 28px;
+    margin-top:0;
+    margin-bottom:16px;
+}
+
+.effect-one {
+    text-align: center;
+    font-family: "Noto Sans Kr", sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    margin-top:0;
+    margin-bottom: 24px;
+}
+
+.hooks-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hooks-content button {
+    text-align: center;
+    font-family: "Noto Sans Kr", sans-serif;
+    background-color: white;
+    color:#555555;
+    font-size: 16px;
+    padding:12px 0;
+    margin-bottom: 12px;
+    border-radius: 30px;
+    border:1px solid grey;
+    width: 40%;
+}
+
+.hooks-content input {
+    border-radius: 0;
+    border:2px solid black;
+    height: 32px;
+    margin:24px 0;
+    width: 40%;
+}
+
+.state {
+    font-size: 32px;
+    font-family: "Noto Sans Kr", sans-serif;
+    color:#333333;
+    font-weight: 800;
+    margin-bottom: 24px;
+}
+
+.effect-example {
+    font-size: 20px;
+    font-family: "Noto Sans Kr", sans-serif;
+    color:#333333;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
 
