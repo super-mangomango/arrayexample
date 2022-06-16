@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import './all.css'
 import userInfo from "./user"
-import add from "./add"
+// import add from "./add"
 
 
 function UserList ({ name, gender, age }) {
