@@ -7,9 +7,9 @@ import Hooks from "./Hooks"
 const App = () => {
     return (
         <Routes>
-            <Route path="/" element={<List/>} />
-            <Route path="/array" element={<ExampleOne />} />
-            <Route path="/params" element={<Params />} />
+            <Route path="/" element={<List/>}/>
+            <Route path="/array" element={<ExampleOne/>}/>
+            <Route path="/params" element={<Params/>}/>
             <Route path="/hooks" element={<Hooks />} />
         </Routes>
     );

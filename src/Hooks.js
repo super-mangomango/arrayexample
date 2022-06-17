@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import './all.css'
+import Memoexample from "./Memoexample";
 
 const Unmount = () => {
     useEffect(()=> {
@@ -60,58 +61,61 @@ const Hooks = () => {
         }
     },[count, text])
 
-    const countReleaseYear = () => {
-        const countThisYear = data.filter ((count)=> count.year >= 2022 ).length;
-        const countOldYear = data.length - countThisYear;
-
-        console.log("Count Release Year")
-
-        return {countThisYear, countOldYear}
-    }
-
-    const {countThisYear, countOldYear} = countReleaseYear()
-
-    // const countReleaseYear = useMemo(() => {
+    // const countReleaseYear = () => {
     //     const countThisYear = data.filter ((count)=> count.year >= 2022 ).length;
     //     const countOldYear = data.length - countThisYear;
     //
     //     console.log("Count Release Year")
     //
     //     return {countThisYear, countOldYear}
-    // },[data])
+    // }
     //
-    // const {countThisYear, countOldYear} = countReleaseYear
+    // const {countThisYear, countOldYear} = countReleaseYear()
+
+    const countReleaseYear = useMemo(() => {
+        const countThisYear = data.filter ((count)=> count.year >= 2022 ).length;
+        const countOldYear = data.length - countThisYear;
+
+        console.log("Count Release Year")
+
+        return {countThisYear, countOldYear}
+    },[data])
+
+    const {countThisYear, countOldYear} = countReleaseYear
 
     return (
-        <div className="hooks-wrapper">
-            <div className="hooks">
-                <h3 className="hooks-title">useEffect</h3>
-                <div className="hooks-content">
-                    <div className="effect-one"> {count} </div>
-                    <button onClick={()=> setCount(count+1)}>+1</button>
-                    <button onClick={()=> setCount(count-1)}>-1</button>
-                    <input onBlur={(e) => setText(e.target.value)} />
-                    <div className="state">{state}</div>
-                    <button onClick={toggle}>ON / OFF</button>
-                    {isVisible && <Unmount />}
+        <>
+        <Memoexample />
+            <div className="hooks-wrapper">
+                <div className="hooks">
+                    <h3 className="hooks-title">useEffect</h3>
+                    <div className="hooks-content">
+                        <div className="effect-one"> {count} </div>
+                        <button onClick={()=> setCount(count+1)}>+1</button>
+                        <button onClick={()=> setCount(count-1)}>-1</button>
+                        <input onBlur={(e) => setText(e.target.value)} />
+                        <div className="state">{state}</div>
+                        <button onClick={toggle}>ON / OFF</button>
+                        {isVisible && <Unmount />}
+                    </div>
+                </div>
+                <div className="hooks">
+                    <h3 className="hooks-title">useMemo</h3>
+                    <div className="wrapper">
+                        <div className="title-hooks"> list </div>
+                        <ul className="ul-hooks">
+                            {data.map ((it, i) => {
+                                return (
+                                    <UserList key={it.i} title={it.title} year={it.year} imgurl={it.imgurl}/>
+                                )
+                            })}
+                        </ul>
+                        <div className="number-one"> 올해 개봉작 : {countThisYear} 개</div>
+                        <div className="number-one"> 이전 개봉작 : {countOldYear} 개</div>
+                    </div>
                 </div>
             </div>
-            <div className="hooks">
-                <h3 className="hooks-title">useMemo</h3>
-                <div className="wrapper">
-                    <div className="title-hooks"> list </div>
-                    <ul className="ul-hooks">
-                        {data.map ((it, i) => {
-                            return (
-                                <UserList key={it.i} title={it.title} year={it.year} imgurl={it.imgurl}/>
-                            )
-                        })}
-                    </ul>
-                    <div className="number-one"> 올해 개봉작 : {countThisYear} 개</div>
-                    <div className="number-one"> 이전 개봉작 : {countOldYear} 개</div>
-                </div>
-            </div>
-        </div>
+        </>
     )
 }
 
