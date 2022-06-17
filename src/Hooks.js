@@ -1,6 +1,7 @@
-import React, { useMemo, useState, useEffect } from "react";
+import React, {useMemo, useState, useEffect, useCallback} from "react";
 import './all.css'
 import Memoexample from "./Memoexample";
+import ListEditor from "./ListEditor";
 
 const Unmount = () => {
     useEffect(()=> {
@@ -61,31 +62,58 @@ const Hooks = () => {
         }
     },[count, text])
 
-    // const countReleaseYear = () => {
-    //     const countThisYear = data.filter ((count)=> count.year >= 2022 ).length;
-    //     const countOldYear = data.length - countThisYear;
-    //
-    //     console.log("Count Release Year")
-    //
-    //     return {countThisYear, countOldYear}
-    // }
-    //
-    // const {countThisYear, countOldYear} = countReleaseYear()
-
-    const countReleaseYear = useMemo(() => {
+    const countReleaseYear = () => {
         const countThisYear = data.filter ((count)=> count.year >= 2022 ).length;
         const countOldYear = data.length - countThisYear;
 
         console.log("Count Release Year")
 
         return {countThisYear, countOldYear}
-    },[data])
+    }
 
-    const {countThisYear, countOldYear} = countReleaseYear
+    const {countThisYear, countOldYear} = countReleaseYear()
+
+    // const onCreate = useCallback((title, year, imgurl) => {
+    //     const newItem = {
+    //         title,
+    //         year,
+    //         imgurl,
+    //     };
+    //     setData((data) => [...data, newItem]);
+    // },[]);
+
+    const onCreate = useCallback((title, year, imgurl) => {
+        const newItem = {
+            title,
+            year,
+            imgurl,
+        };
+        setData((data) => [...data, newItem]);
+    },[]);
+
+    // const onCreate = (title, year, imgurl) => {
+    //     const newItem = {
+    //         title,
+    //         year,
+    //         imgurl,
+    //     };
+    //     setData([...data, newItem]);
+    // }
+
+    // const countReleaseYear = useMemo(() => {
+    //     const countThisYear = data.filter ((count)=> count.year >= 2022 ).length;
+    //     const countOldYear = data.length - countThisYear;
+    //
+    //     console.log("Count Release Year")
+    //
+    //     return {countThisYear, countOldYear}
+    // },[data])
+    //
+    // const {countThisYear, countOldYear} = countReleaseYear
 
     return (
         <>
-        <Memoexample />
+        {/*<Memoexample />*/}
             <div className="hooks-wrapper">
                 <div className="hooks">
                     <h3 className="hooks-title">useEffect</h3>
@@ -112,6 +140,7 @@ const Hooks = () => {
                         </ul>
                         <div className="number-one"> 올해 개봉작 : {countThisYear} 개</div>
                         <div className="number-one"> 이전 개봉작 : {countOldYear} 개</div>
+                        <ListEditor onCreate={onCreate}/>
                     </div>
                 </div>
             </div>

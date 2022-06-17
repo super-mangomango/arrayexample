@@ -8,12 +8,28 @@ const CountView = React.memo(({count}) => {
     return <div>{count}</div>
 })
 
-const CountViewB = React.memo(({obj}) => {
+// const CountViewB = React.memo(({obj}) => {
+//     useEffect(()=>{
+//         console.log(`Count is ${obj.number}`)
+//     })
+//     return <div>{obj.number}</div>
+// })
+
+const CountViewB = ({obj}) => {
     useEffect(()=>{
-        console.log(`Count is ${obj.count}`)
+        console.log(`Count is ${obj.number}`)
     })
-    return <div>{obj.count}</div>
-})
+    return <div>{obj.number}</div>
+}
+
+// const compareState = (prevProps, nextProps) => {
+//     if (prevProps.obj.number === nextProps.obj.number) {
+//         return true
+//     }
+//     return false
+// }
+//
+// const MemoizedCounterB = React.memo(CountViewB, compareState)
 
 const TextView = React.memo(({text}) => {
     useEffect(()=>{
@@ -28,18 +44,19 @@ const Memoexample = () => {
     const [text, setText] = useState("")
 
     const [obj, setObj] = useState({
-        count:1
+        number:0
     })
 
     return <div style={{padding: 50}}>
         <div>
             <h2> Count </h2>
-            <button onClick={()=>setCount(count)}> + </button>
+            <button onClick={()=>setCount(count +1)}> + </button>
             <CountView count={count} />
         </div>
         <div>
             <h2> Count2 </h2>
-            <button onClick={()=>setObj({count:obj.count} )}> + </button>
+            <button onClick={()=>setObj({number:obj.number} )}> + </button>
+            {/*<MemoizedCounterB obj={obj} />*/}
             <CountViewB obj={obj} />
         </div>
         <div>
