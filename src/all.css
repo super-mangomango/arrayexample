@@ -289,3 +289,35 @@ b {
     padding-bottom: 16px;
     padding-top:16px;
 }
+
+.observer-wrapper {
+    width: 360px;
+    margin: 48px auto 0;
+}
+
+.movie-scroll {
+    width: 360px;
+    height: 540px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.movie-list-title {
+    display: none;
+}
+
+.movie-list-hooks img {
+    width: 360px;
+    height: auto;
+}
+
+.movie-list-hooks {
+    margin: 16px 0;
+}
+
+.movie-scroll-title {
+    font-family: "Noto Sans Kr", sans-serif;
+    color: #666666;
+    font-size: 20px;
+    text-align: center;
+}
