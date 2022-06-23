@@ -4,6 +4,7 @@ import ExampleOne from "./ExampleOne";
 import Params from "./Params"
 import Hooks from "./Hooks"
 import Observer from  "./Observer"
+import ObserverHook from "./ObserverHook"
 
 const App = () => {
     return (
@@ -13,6 +14,7 @@ const App = () => {
             <Route path="/params" element={<Params/>}/>
             <Route path="/hooks" element={<Hooks />} />
             <Route path="/observer" element={<Observer />} />
+            <Route path="/observer-hook" element={<ObserverHook />} />
         </Routes>
     );
 };

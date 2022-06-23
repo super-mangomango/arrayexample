@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 
+@keyframes animTitle {
+    from {
+        /* Add starting values for animation */
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to  {
+        /* Add Ending values for animation */
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 li {
     list-style: none;
 }
@@ -320,4 +333,100 @@ b {
     color: #666666;
     font-size: 20px;
     text-align: center;
+}
+
+.goexample {
+    font-family: "Noto Sans Kr", sans-serif;
+    color: #666666;
+    font-weight: 700;
+    font-size: 20px;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -75%);
+}
+
+.example-section {
+    width: 100%;
+    height: 960px;
+    background-color: #f0f0f0;
+}
+.section-1-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.trash {
+    font-family: "Noto Sans Kr", sans-serif;
+    color: #333333;
+    font-weight: 700;
+    font-size: 32px;
+    padding-top: 400px;
+}
+
+.example-section-2 {
+    width: 100%;
+    background-color: #fff;
+}
+
+.section-2-wrapper {
+    padding:100px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width:1024px;
+    margin:0 auto;
+    align-items: center;
+}
+
+.section-2-title {
+    font-family: "Noto Sans Kr", sans-serif;
+    color: #333333;
+    font-weight: 400;
+    font-size: 32px;
+}
+
+.section-2-subtitle {
+    padding-top: 12px;
+    font-family: "Noto Sans Kr", sans-serif;
+    color:#666666;
+    font-weight: 700;
+    font-size: 18px;
+    border-bottom: 1px solid #666666;
+}
+
+.map-ul {
+    padding-top: 32px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.map-ul li {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 0 0 16px 8px rgba(0, 0, 0, 0.06);
+    border-radius: 0.5rem;
+    background-color: white;
+}
+
+.example-list-title {
+    padding: 24px 24px 12px;
+    font-family: "Noto Sans Kr", sans-serif;
+    color:#666666;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.example-list-description {
+    padding: 0 16px 24px;
+    font-family: "Noto Sans Kr", sans-serif;
+    color:#333333;
+    font-weight: 400;
+    font-size: 15px;
 }

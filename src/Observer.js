@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useRef, useCallback} from "react";
 import "./all.css"
 import movieData from "./movielist"
-
+import { Link } from "react-router-dom";
 
 
 // function MovieList ({ title, year, imgurl }) {
@@ -20,7 +20,7 @@ import movieData from "./movielist"
 const Observer = () => {
 
     const [movieList, setMovieList] = useState([]);
-    const [movie, setMovie] = useState("Loading...")
+    const [movie, setMovie] = useState("Title is....")
     const movieImg = useRef([])
     const scrollRoot = useRef()
 
@@ -36,15 +36,17 @@ const Observer = () => {
         setMovieList(initData)
     }
 
-    const changeTitle = (entry) => {
-        console.log(entry[0].target.currentSrc)
-            for (let i=0; i<movieList.length; i++ ) {
-                if(entry[0].target.currentSrc===movieList[i].imgurl){
-                    setMovie(movieList[i].title)
+    const changeTitle = useCallback((entry) => {
+        if(entry[0].isIntersecting){
+            for ( let p = 0; p < movieList.length; p++) {
+                if(entry[0].target.currentSrc === movieList[p].imgurl) {
+                    return setMovie( movieList[p].title )
                 }
             }
         }
-
+        else {
+        }
+    },[movieList])
 
 
     useEffect(()=>{
@@ -53,36 +55,34 @@ const Observer = () => {
     },[])
 
     useEffect(()=>{
-
-            for (let i=0; i<movieList.length; i++ ){
-                    let observer
-                    observer = new IntersectionObserver(changeTitle, {
-
-                        threshold:0.55
-                    })
-                    observer.observe(movieImg.current[i])
-                return console.log("end")
-
-            }
-    })
+        let observer
+        observer = new IntersectionObserver(changeTitle,{
+            threshold: 0.55
+        })
+        for (let i=0; i < movieList.length; i++) {
+            observer.observe(movieImg.current[i])
+        }
+        return () => observer && observer.disconnect()
+    },[changeTitle])
 
 
     return (
         <>
             <div className="observer-wrapper">
-                <div className="movie-scroll-title">{movie}</div>
-                <div ref={scrollRoot} className="movie-scroll">
-                    <ul className="movie-list">
-                        {movieList.map ((it, i) => {
-                            return (
-                                <li className="movie-list-hooks">
-                                    <img ref={ el => movieImg.current[i] = el } src={it.imgurl} alt="large-poster" />
-                                    <div className="movie-list-title">{it.title} / {it.year}</div>
-                                </li>
-                            )
-                        })}
-                    </ul>
-                </div>
+                <div ref={scrollRoot} data-animate="animTitle 2s " className="movie-scroll-title">{movie}</div>
+                    <div className="movie-scroll">
+                        <ul className="movie-list">
+                            {movieList.map ((it, i) => {
+                                return (
+                                    <li className="movie-list-hooks">
+                                        <img ref={ el => movieImg.current[i] = el } src={it.imgurl} alt="large-poster" />
+                                        <div className="movie-list-title">{it.title} / {it.year}</div>
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                    </div>
+                <Link className="goexample" to="/observer-hook">Hook 예제 →</Link>
             </div>
         </>
     )

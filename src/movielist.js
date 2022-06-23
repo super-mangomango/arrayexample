@@ -339,9 +339,9 @@ module.exports = [
     },
     {
         id: 42953,
-        url: "https://yts.mx/movies/jon-stewart-the-kennedy-center-mark-twain-prize-for-american-humor-2022",
+        url: "https://m.media-amazon.com/images/M/MV5BMmIwZDMyYWUtNTU0ZS00ODJhLTg2ZmEtMTk5ZmYzODcxODYxXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_.jpg",
         imdb_code: "tt19849236",
-        title: "Jon Stewart: The Kennedy Center Mark Twain Prize for American Humor",
+        title: "Top-Gun : Maverick",
         title_english: "Jon Stewart: The Kennedy Center Mark Twain Prize for American Humor",
         title_long: "Jon Stewart: The Kennedy Center Mark Twain Prize for American Humor (2022)",
         slug: "jon-stewart-the-kennedy-center-mark-twain-prize-for-american-humor-2022",
@@ -360,8 +360,8 @@ module.exports = [
         background_image: "https://yts.mx/assets/images/movies/jon_stewart_the_kennedy_center_mark_twain_prize_for_american_humor_2022/background.jpg",
         background_image_original: "https://yts.mx/assets/images/movies/jon_stewart_the_kennedy_center_mark_twain_prize_for_american_humor_2022/background.jpg",
         small_cover_image: "https://yts.mx/assets/images/movies/jon_stewart_the_kennedy_center_mark_twain_prize_for_american_humor_2022/small-cover.jpg",
-        medium_cover_image: "https://yts.mx/assets/images/movies/jon_stewart_the_kennedy_center_mark_twain_prize_for_american_humor_2022/medium-cover.jpg",
-        large_cover_image: "https://yts.mx/assets/images/movies/jon_stewart_the_kennedy_center_mark_twain_prize_for_american_humor_2022/large-cover.jpg",
+        medium_cover_image: "https://m.media-amazon.com/images/M/MV5BMmIwZDMyYWUtNTU0ZS00ODJhLTg2ZmEtMTk5ZmYzODcxODYxXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_.jpg",
+        large_cover_image: "https://m.media-amazon.com/images/M/MV5BMmIwZDMyYWUtNTU0ZS00ODJhLTg2ZmEtMTk5ZmYzODcxODYxXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_.jpg",
         state: "ok",
         torrents: [
             {
@@ -900,7 +900,7 @@ module.exports = [
         id: 42943,
         url: "https://yts.mx/movies/brandon-leake-a-family-affair-2022",
         imdb_code: "tt20358252",
-        title: "Brandon Leake: A Family Affair",
+        title: "Interseptor",
         title_english: "Brandon Leake: A Family Affair",
         title_long: "Brandon Leake: A Family Affair (2022)",
         slug: "brandon-leake-a-family-affair-2022",
@@ -919,8 +919,8 @@ module.exports = [
         background_image: "https://yts.mx/assets/images/movies/brandon_leake_a_family_affair_2022/background.jpg",
         background_image_original: "https://yts.mx/assets/images/movies/brandon_leake_a_family_affair_2022/background.jpg",
         small_cover_image: "https://yts.mx/assets/images/movies/brandon_leake_a_family_affair_2022/small-cover.jpg",
-        medium_cover_image: "https://yts.mx/assets/images/movies/brandon_leake_a_family_affair_2022/medium-cover.jpg",
-        large_cover_image: "https://yts.mx/assets/images/movies/brandon_leake_a_family_affair_2022/large-cover.jpg",
+        medium_cover_image: "https://assets-prd.ignimgs.com/2022/05/03/interceptor-en-us-main-vertical-1651614637898.jpg",
+        large_cover_image: "https://assets-prd.ignimgs.com/2022/05/03/interceptor-en-us-main-vertical-1651614637898.jpg",
         state: "ok",
         torrents: [
             {
