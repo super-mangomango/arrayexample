@@ -6,7 +6,7 @@ import AutoSizer from "react-virtualized-auto-sizer";
 import "./style.css"
 
 const Row = ({ index, style }) => (
-    <div className="list-item" style={style}>
+    <div className={"list-item" + index} style={style}>
         <div className="list-wrapper">
             <img className="list-img" src={bnbInfo[index].img} alt={bnbInfo[index].name} />
             <div className="list-text-wrapper">
