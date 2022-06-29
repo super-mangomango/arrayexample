@@ -430,3 +430,55 @@ b {
     font-weight: 400;
     font-size: 15px;
 }
+
+.bnb {
+    width: 100%;
+    background-color: #f9f9f9;
+}
+
+.bnb-list {
+    display: flex;
+    flex-direction: column;
+    width: 1024px;
+    margin: 0 auto;
+
+}
+
+.bnb-li {
+    display: flex;
+    width: 100%;
+    height: 200px;
+    margin: 8px 0;
+    background-color: white;
+    box-shadow: 0 0 12px 8px rgba(0, 0, 0, 0.02);
+}
+
+.bnb-li-img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.bnb-li-info {
+    margin-left: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bnb-li-name {
+    font-family: "Noto Sans Kr", sans-serif;
+    color:#666666;
+    font-weight: 400;
+    font-size: 24px;
+    margin-bottom: 16px;
+    padding-right: 36px;
+    word-break: keep-all;
+}
+
+.bnb-li-price {
+    font-family: "Noto Sans Kr", sans-serif;
+    color:#333333;
+    font-weight: 700;
+    font-size: 20px;
+}
